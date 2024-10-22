@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  firebase:
+    build: .
+    ports:
+      - "4000:4000"
+      - "9005:9005"
+      - "8080:8080"
+    volumes:
+      - .:/usr/src/app
+    command: ["firebase", "emulators:start", "--only", "auth,firestore"]
