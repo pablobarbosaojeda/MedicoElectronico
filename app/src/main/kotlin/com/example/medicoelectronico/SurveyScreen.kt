@@ -7,15 +7,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MedicalRecordScreen(viewModel: MedicalRecordViewModel, userId: String) {
-    var records by remember { mutableStateOf(listOf<MedicalRecord>()) }
+fun SurveyScreen(viewModel: SurveyViewModel, userId: String) {
+    var surveys by remember { mutableStateOf(listOf<Survey>()) }
     var isLoading by remember { mutableStateOf(true) }
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     LaunchedEffect(userId) {
-        viewModel.getRecords(userId) { result ->
-            result.onSuccess { fetchedRecords ->
-                records = fetchedRecords
+        viewModel.getSurveys(userId) { result ->
+            result.onSuccess { fetchedSurveys ->
+                surveys = fetchedSurveys
                 isLoading = false
             }.onFailure { error ->
                 errorMessage = error.message
@@ -34,11 +34,9 @@ fun MedicalRecordScreen(viewModel: MedicalRecordViewModel, userId: String) {
         }
     } else {
         Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-            records.forEach { record ->
-                Text(text = "Doctor: ${record.doctorName}")
-                Text(text = "Diagnosis: ${record.diagnosis}")
-                Text(text = "Treatment: ${record.treatment}")
-                Text(text = "Date: ${record.date}")
+            surveys.forEach { survey ->
+                Text(text = "Survey Title: ${survey.title}")
+                Text(text = "Survey Description: ${survey.description}")
                 Spacer(modifier = Modifier.height(8.dp))
             }
         }
