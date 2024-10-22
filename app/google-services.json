@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "127213822497",
+    "project_id": "medicoelectronico",
+    "storage_bucket": "medicoelectronico.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127213822497:android:870ad0b1fe8ad697f2b960",
+        "android_client_info": {
+          "package_name": "com.example.medicoelectronico"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClHbbbZUujXkQIvhWl2qHwx2Wg8WzTBQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
