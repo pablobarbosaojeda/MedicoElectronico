@@ -1,0 +1,22 @@
+[debug] [2024-10-22T15:13:39.773Z] ----------------------------------------------------------------------
+[debug] [2024-10-22T15:13:39.775Z] Command:       /usr/local/bin/firebase /home/barbosa/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase projects:addfirebase com.example.medicoelectronico
+[debug] [2024-10-22T15:13:39.776Z] CLI Version:   13.22.1
+[debug] [2024-10-22T15:13:39.776Z] Platform:      linux
+[debug] [2024-10-22T15:13:39.776Z] Node Version:  v18.5.0
+[debug] [2024-10-22T15:13:39.777Z] Time:          Tue Oct 22 2024 17:13:39 GMT+0200 (GMT+02:00)
+[debug] [2024-10-22T15:13:39.777Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-22T15:13:39.783Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-22T15:13:39.784Z] > authorizing via signed-in user (pablobarbosaojeda@gmail.com)
+[debug] [2024-10-22T15:13:39.790Z] Checked if tokens are valid: true, expires at: 1729613084056
+[debug] [2024-10-22T15:13:39.790Z] Checked if tokens are valid: true, expires at: 1729613084056
+[debug] [2024-10-22T15:13:39.792Z] >>> [apiv2][query] POST https://firebase.googleapis.com/v1beta1/projects/com.example.medicoelectronico:addFirebase [none]
+[debug] [2024-10-22T15:13:40.204Z] <<< [apiv2][status] POST https://firebase.googleapis.com/v1beta1/projects/com.example.medicoelectronico:addFirebase 400
+[debug] [2024-10-22T15:13:40.204Z] <<< [apiv2][body] POST https://firebase.googleapis.com/v1beta1/projects/com.example.medicoelectronico:addFirebase {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT"}}
+[debug] [2024-10-22T15:13:40.205Z] HTTP Error: 400, Request contains an invalid argument.
+[debug] [2024-10-22T15:13:40.273Z] FirebaseError: HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (/home/barbosa/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/home/barbosa/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to add Firebase to Google Cloud Platform project. See firebase-debug.log for more info.
