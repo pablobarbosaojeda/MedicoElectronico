@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("kapt")
+
 }
 
 android {
@@ -56,5 +58,17 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    // Room Database para manejo de datos locales
+    implementation ("androidx.room:room-runtime:2.3.0")
+    kapt ("androidx.room:room-compiler:2.3.0")
 
+    // Biblioteca de Seguridad Criptográfica para encriptación
+    implementation ("androidx.security:security-crypto:1.1.0-alpha03")
+
+    // Librerías de ciclo de vida y LiveData
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.0")
+
+    // Firebase Authentication para autenticación segura
+    implementation ("com.google.firebase:firebase-auth:21.0.1")
 }
