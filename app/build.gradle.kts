@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.gms.google-services")
     kotlin("kapt")
 
 }
@@ -71,4 +72,13 @@ dependencies {
 
     // Firebase Authentication para autenticación segura
     implementation ("com.google.firebase:firebase-auth:21.0.1")
+    // Import the Firebase BoM
+
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    // When using the BoM, don't specify versions in Firebase dependencies
+
+    implementation("com.google.firebase:firebase-analytics")
+
+
 }
