@@ -1,9 +1,11 @@
 package com.example.medicoelectronico
 
+import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import java.io.File
 
 class MedicalRecordViewModel(private val repository: MedicalRecordRepository) : ViewModel() {
 
@@ -26,5 +28,15 @@ class MedicalRecordViewModel(private val repository: MedicalRecordRepository) : 
     // Elimina un registro médico
     fun delete(record: MedicalRecord) = viewModelScope.launch {
         repository.delete(record)
+    }
+
+    // Envía los datos del paciente al servidor FHIR
+    fun sendPatientDataToFhirServer(record: MedicalRecord) = viewModelScope.launch {
+        repository.sendPatientDataToFhirServer(record)
+    }
+
+    // Crea un archivo PDF con los datos del paciente
+    fun createPdf(context: Context, record: MedicalRecord): File {
+        return repository.createPdf(context, record)
     }
 }

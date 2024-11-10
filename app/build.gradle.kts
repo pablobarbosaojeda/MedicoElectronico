@@ -63,6 +63,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation ("ca.uhn.hapi.fhir:hapi-fhir-base:5.4.0")
+    implementation ("ca.uhn.hapi.fhir:hapi-fhir-structures-r4:5.4.0") // Versión R4 de FHIR
+    implementation ("com.itextpdf:itext7-core:7.1.15")
+
+
     // Room Database para manejo de datos locales
     implementation ("androidx.room:room-runtime:2.4.1")
     kapt ("androidx.room:room-compiler:2.4.1")
