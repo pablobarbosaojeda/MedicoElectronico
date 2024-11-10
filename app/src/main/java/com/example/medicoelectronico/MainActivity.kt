@@ -36,7 +36,12 @@ class MainActivity : AppCompatActivity() {
         // Inicializar el RecyclerView
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = MedicalRecordAdapter()
+        val adapter = MedicalRecordAdapter { record ->
+            // Abre AddRecordActivity en modo de edición con el registro seleccionado
+            val intent = Intent(this, AddRecordActivity::class.java)
+            intent.putExtra("record", record)  // Pasa el registro al intent
+            startActivity(intent)
+        }
         recyclerView.adapter = adapter
 
         // Inicializar el ViewModel con la fábrica
@@ -55,11 +60,13 @@ class MainActivity : AppCompatActivity() {
         btnViewAllRecords = findViewById(R.id.btnViewAllRecords)
         btnLogout = findViewById(R.id.btnLogout)
 
+        // Botón para agregar un nuevo registro
         btnAddRecord.setOnClickListener {
             val intent = Intent(this, AddRecordActivity::class.java)
             startActivity(intent)
         }
 
+        // Botón para ver todos los registros
         btnViewAllRecords.setOnClickListener {
             medicalRecordViewModel.allMedicalRecords.observe(this) { records ->
                 adapter.submitList(records)
@@ -75,4 +82,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-

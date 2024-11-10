@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medicoelectronico.MedicalRecord
 
-class MedicalRecordAdapter :
-    ListAdapter<MedicalRecord, MedicalRecordAdapter.MedicalRecordViewHolder>(DIFF_CALLBACK) {
+class MedicalRecordAdapter(
+    private val onEditClick: (MedicalRecord) -> Unit  // Listener para el botón de edición
+) : ListAdapter<MedicalRecord, MedicalRecordAdapter.MedicalRecordViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MedicalRecordViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -26,11 +27,17 @@ class MedicalRecordAdapter :
         private val txtDiagnosis: TextView = itemView.findViewById(R.id.txtDiagnosis)
         private val txtDoctor: TextView = itemView.findViewById(R.id.txtDoctor)
         private val txtDate: TextView = itemView.findViewById(R.id.txtDate)
+        private val btnEdit: View = itemView.findViewById(R.id.btnEdit)  // Botón de edición
 
         fun bind(record: MedicalRecord) {
             txtDiagnosis.text = record.diagnosis
             txtDoctor.text = record.doctorName
             txtDate.text = record.visitDate
+
+            // Configura el listener para el botón de edición
+            btnEdit.setOnClickListener {
+                onEditClick(record)  // Llama al listener de edición con el registro actual
+            }
         }
     }
 
@@ -46,3 +53,4 @@ class MedicalRecordAdapter :
         }
     }
 }
+
