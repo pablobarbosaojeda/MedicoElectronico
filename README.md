@@ -1,5 +1,7 @@
 # **MedicoElectronico** - Aplicación de Gestión de Registros Médicos
 
+# **Autores** - Pablo Barbosa, Augusto Perrone, Assil Asri y Daniel Sousa
+
 ## Descripción del Proyecto
 
 **MedicoElectronico** es una aplicación móvil diseñada para ofrecer a los usuarios una forma segura y eficiente de gestionar su historial médico personal. La aplicación permite a los usuarios agregar, actualizar, visualizar y compartir sus registros médicos con facilidad. Además, está integrada con **Firebase Authentication** para una autenticación segura, y permite la interoperabilidad con sistemas de salud mediante el uso del estándar **FHIR** (Fast Healthcare Interoperability Resources). Los usuarios pueden generar reportes en formato PDF y compartirlos con profesionales médicos, todo dentro de un entorno seguro y privado.
